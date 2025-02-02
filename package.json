@@ -1,0 +1,18 @@
+{
+  "name": "bloodbridge-project",
+  "version": "1.0.0",
+  "description": "IEEE Weignite 3.0 Hackathon",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start",
+    "start" : "nodemon ./app.js"
+    
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}
