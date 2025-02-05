@@ -8,11 +8,17 @@ const OrganizationSchema = new mongoose.Schema({
         unique: true,
         trim: true
     },
+
     type: {
         type: String,
         enum: ['Hospital', 'NGO', 'Corporate', 'College Society'],
         required: true
     },
+
+    events: [{
+        type:mongoose.Schema.Types.ObjectId,
+        ref: 'Event'
+    }],
 
     contact: {
         phone: { type: String, required: true },
@@ -26,22 +32,17 @@ const OrganizationSchema = new mongoose.Schema({
         pincode: { type: String, required: true }
     },
 
-    website: {
-        type: String,
-        default: null
-    },
-
     registeredBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User', // Links to the user who registered this organization
         required: true
     },
 
-    
+
     createdAt: {
         type: Date,
         default: Date.now
     }
 });
 
-module.exports = mongoose.model('Organization', OrganizationSchema);
+module.exports = mongoose.model('Organization', organizationSchema);
