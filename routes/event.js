@@ -21,12 +21,13 @@ router.get("/events", async (req,res)=> {
 });
 
 //new form
-// user must be logged in to add an product
+// user must be logged in to add an event
 router.get("/event/new", isLoggedIn, isAdmin, async (req,res)=>{
     try{
-        // Fetch the list of societies from the database
-        const societies = await Society.find({}, 'name');
-        res.render('events/new',{societies}); 
+        // Fetch the list of oragnisation from the database
+        const organizations = await Organization.find({}, 'name');
+        res.render('events/new',{organizations}); 
+
     }
 
     catch(e) {
@@ -206,7 +207,9 @@ const getEventAnalytics = async (eventId) => {
         });
 
         return { branchCounts, yearCounts };
-    } catch (error) {
+    } 
+    
+    catch (error) {
         console.error('Error fetching event analytics:', error);
         throw error; // Propagate error to be handled in route
     }

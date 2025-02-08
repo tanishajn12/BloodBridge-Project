@@ -10,8 +10,8 @@ const UserSchema = new mongoose.Schema({
     age: {
         type: Number,
         required: true,
-        min: 18, // Assuming 18+ users only
-        max: 100
+        min: 18, 
+        max: 65
     },
     gender: {
         type: String,
@@ -57,7 +57,6 @@ const UserSchema = new mongoose.Schema({
     }
 });
 
-// Hash password before saving user
 UserSchema.pre('save', async function (next) {
     if (!this.isModified('password')) return next();
     const salt = await bcrypt.genSalt(10);
@@ -65,4 +64,4 @@ UserSchema.pre('save', async function (next) {
     next();
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', userSchema);

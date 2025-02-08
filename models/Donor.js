@@ -38,11 +38,11 @@ const DonorSchema = new mongoose.Schema({
         type: Boolean,
         default: true 
     },
-    
+
     createdAt: {
         type: Date,
         default: Date.now
     }
 });
 
-module.exports = mongoose.model('Donor', DonorSchema);
+module.exports = mongoose.model('Donor', donorSchema);

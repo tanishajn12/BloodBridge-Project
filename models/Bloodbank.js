@@ -28,7 +28,7 @@ const BloodBankSchema = new mongoose.Schema({
         ref: 'User', // Assuming the User model stores owner/admin details
         required: true
     },
-    
+
     ownerDetails: {
         name: { type: String, required: true },
         phone: { type: String, required: true },
@@ -72,4 +72,4 @@ const BloodBankSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Bloodbank', BloodBankSchema);
+module.exports = mongoose.model('Bloodbank', bloodBankSchema);

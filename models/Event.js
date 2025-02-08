@@ -58,11 +58,11 @@ const EventSchema = new mongoose.Schema({
         enum: ['Upcoming', 'Ongoing', 'Completed', 'Cancelled'],
         default: 'Upcoming'
     },
-    
+
     createdAt: {
         type: Date,
         default: Date.now
     }
 });
 
-module.exports = mongoose.model('Event', EventSchema);
+module.exports = mongoose.model('Event', eventSchema);
