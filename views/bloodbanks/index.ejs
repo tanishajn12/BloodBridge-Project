@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+
+<div class="container mt-4">
+    <h2 class="text-center">All Blood Banks</h2>
+    <a href="/bloodbanks/new" class="btn btn-primary mb-3">Add New Blood Bank</a>
+    
+    <div class="row">
+        <% bloodbanks.forEach(bloodbank => { %>
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= bloodbank.name %></h5>
+                        <p><strong>Location:</strong> <%= bloodbank.location.city %>, <%= bloodbank.location.state %></p>
+                        <p><strong>Contact:</strong> <%= bloodbank.contact.phone %></p>
+                        <a href="/bloodbanks/<%= bloodbank._id %>" class="btn btn-info btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

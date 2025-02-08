@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const BloodBankSchema = new mongoose.Schema({
+const bloodBankSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
